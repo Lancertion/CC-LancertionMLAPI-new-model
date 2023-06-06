@@ -17,7 +17,7 @@ python app.py
 
 - Send POST request to http://localhost:3000
 
-Body request data:
+Body request as JSON:
 
 ```
 {
