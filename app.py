@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from model import predict
-from util import parseInput
+from model import get_result
+from util import parseOutput
 
 app = Flask(__name__)
 
@@ -12,15 +12,14 @@ def main():
 
     if (content_type == 'application/json'):
         json = request.json
-        input = parseInput(json)
 
     try:
-        output = predict(input)
+        output = get_result(json)
 
         return jsonify({
             "error": False,
             "input": json,
-            "result": output
+            "result": parseOutput(output)
         })
 
     except Exception as e:

@@ -1,10 +1,10 @@
-# TODO
-# Menyesuaikan input dengan model machine learning.
-
-def parseInput(json):
-    input = [1 for _ in range(16)]
-
-    for _, value in json.items():
-        input.append(value)
-
-    return input
+def parseOutput(output):
+    output = output[0]
+    if output == 1:
+        return "Low"
+    elif output == 2:
+        return "Medium"
+    elif output == 3:
+        return "High"
+    else:
+        return "Error"
